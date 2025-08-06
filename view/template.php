@@ -12,7 +12,11 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="img/template/icono-negro.png">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="view/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="view/plugins/fontawesome-free/css/all.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="view/plugins/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="view/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="view/plugins/datatables-responsive/css/responsive.bootstrap4.css">
   <!-- Ionicons -->
   <!-- <link rel="stylesheet" href="view/plugins/ionicons/css/ionic.css"> -->
   <!-- overlayScrollbars -->
@@ -21,11 +25,17 @@ session_start();
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <!-- jQuery -->
-  <script src="view/plugins/jquery.min.js"></script>
+  <script src="view/plugins/jquery-3.7.1.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="view/plugins/bootstrap.bundle.min.js"></script>
+  <script src="view/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- <script src="view/plugins/popper.min.js"></script> -->
   <!-- AdminLTE App -->
   <script src="view/dist/js/adminlte.min.js"></script>
+  <!-- DataTables -->
+<script src="view/plugins/datatables/dataTables.js"></script>
+<script src="view/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script src="view/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+<script src="view/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
   <!-- AdminLTE for demo purposes -->
   <!-- <script src="view/dist/js/demo.js"></script> -->
 </head>
@@ -65,7 +75,21 @@ session_start();
     ?>
   </div>
   <!-- ./wrapper -->
-  <script src="js/template.js"></script>
+  <script src="view/js/template.js"></script>
+  <!-- <script>
+  $(function () {
+    $("#dataTableUser").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script> -->
 </body>
 
 </html>
