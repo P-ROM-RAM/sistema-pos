@@ -9,10 +9,18 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <!-- Settings Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
+        <li class="dropdown user user-menu">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <?php
+            if($_SESSION["photo"] != ""){
+              echo '<img src="'.$_SESSION["photo"].'" alt="User Image" class="user-image">';
+            }else{
+              echo '<img src="img/users/anonymous.png" alt="User Image" class="user-image">';
+            }
+            ?>
+
             <i class="far fa-user"></i>
-            <span>Admin User</span>
+            <span><?php echo $_SESSION["name"]." / ".$_SESSION["profile"];?></span>
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <span class="dropdown-item dropdown-header">Settings</span>

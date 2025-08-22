@@ -13,7 +13,8 @@ session_start();
   <link rel="icon" href="img/template/icono-negro.png">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="view/plugins/fontawesome-free/css/all.css">
-    <!-- DataTables -->
+  <link rel="stylesheet" href="view/plugins/less/dropdown.less">
+  <!-- DataTables -->
   <link rel="stylesheet" href="view/plugins/bootstrap/bootstrap.css">
   <link rel="stylesheet" href="view/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="view/plugins/datatables-responsive/css/responsive.bootstrap4.css">
@@ -32,64 +33,66 @@ session_start();
   <!-- AdminLTE App -->
   <script src="view/dist/js/adminlte.min.js"></script>
   <!-- DataTables -->
-<script src="view/plugins/datatables/dataTables.js"></script>
-<script src="view/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-<script src="view/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
-<script src="view/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+  <script src="view/plugins/datatables/dataTables.js"></script>
+  <script src="view/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+  <script src="view/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+  <script src="view/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
   <!-- AdminLTE for demo purposes -->
+  <!-- SweetAlert 2 -->
+  <script src="view/plugins/sweetalert/sweetalert.all.js"></script>
   <!-- <script src="view/dist/js/demo.js"></script> -->
 </head>
 
 <body class="hold-transition sidebar-collapse sidebar-mini ">
-<!-- <body class="hold-transition sidebar-collapse sidebar-mini login-page"> -->
+  <!-- <body class="hold-transition sidebar-collapse sidebar-mini login-page"> -->
   <!-- Site wrapper -->
   <?php
-  if(isset($_SESSION["sesionActive"]) && $_SESSION["sesionActive"] == "ok"){
+  if (isset($_SESSION["sesionActive"]) && $_SESSION["sesionActive"] == "ok") {
 
 
     echo '<div class="wrapper">';
 
-      include "modules/head.php";
-      include "modules/menu.php";
-      if(isset($_GET["ruta"])){
-        if( $_GET["ruta"] == "start" ||
-            $_GET["ruta"] == "users" ||
-            $_GET["ruta"] == "categories" ||
-            $_GET["ruta"] == "products" ||
-            $_GET["ruta"] == "customers" ||
-            $_GET["ruta"] == "manage-sales" ||
-            $_GET["ruta"] == "create-sales" ||
-            $_GET["ruta"] == "sales-report" ||
-            $_GET["ruta"] == "logout"){
-          include "modules/".$_GET["ruta"].".php";
-        }else{
-          include "modules/404.php";
-        }
+    include "modules/head.php";
+    include "modules/menu.php";
+    if (isset($_GET["ruta"])) {
+      if (
+        $_GET["ruta"] == "start" ||
+        $_GET["ruta"] == "users" ||
+        $_GET["ruta"] == "categories" ||
+        $_GET["ruta"] == "products" ||
+        $_GET["ruta"] == "customers" ||
+        $_GET["ruta"] == "manage-sales" ||
+        $_GET["ruta"] == "create-sales" ||
+        $_GET["ruta"] == "sales-report" ||
+        $_GET["ruta"] == "logout"
+      ) {
+        include "modules/" . $_GET["ruta"] . ".php";
+      } else {
+        include "modules/404.php";
       }
-      include "modules/footer.php";
+    }
+    include "modules/footer.php";
 
     echo '</div>';
   } else {
     include "modules/login.php";
   }
-    ?>
+  ?>
   </div>
   <!-- ./wrapper -->
   <script src="view/js/template.js"></script>
+  <script src="view/js/users.js"></script>
   <!-- <script>
-  $(function () {
-    $("#dataTableUser").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script> -->
+    Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!"
+            }).then((result)=>{
+                if(result.value){
+                    window.location = "user";
+                }
+            });
+  </script> -->
 </body>
 
 </html>

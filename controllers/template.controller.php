@@ -1,7 +1,7 @@
 <?php
 
 class TemplateController{
-    public function ctrTemplate(){
+    static public function ctrTemplate(){
         include"view/template.php";
     }
 }

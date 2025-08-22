@@ -1,7 +1,4 @@
 $(function () {
-    // $(".dataTableUser").DataTable();
+    $(".dataTableUser").DataTable();
     // $('.sidebar-menu').tree();
   });
-// $('#dataTableUser').DataTable( {
-//     responsive: true
-// } );
